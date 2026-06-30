@@ -2,4 +2,8 @@ pandas
 numpy
 seaborn
 matplobblib
+scikit-learn
+optuna
+xgboost
+catboost
 -e .
