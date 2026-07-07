@@ -7,6 +7,9 @@ from dataclasses import dataclass
 from src.exception import CustomException
 from src.logger import logging
 
+from src.components.data_transformation import DataTransformation,DataTransformationConfig
+from src.components.model_trainer import ModelTrainer,ModelTrainerConfig
+
 @dataclass
 class DataIngestionConfig:
     train_data_path:str = os.path.join('artifacts','train.csv')
@@ -41,4 +44,8 @@ class DataIngestion:
 
 if __name__ == '__main__':
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_path,test_path = obj.initiate_data_ingestion()
+    data_transformation = DataTransformation()
+    X_train,y_train,X_test ,y_test,preprocessor = data_transformation.initiate_data_transformation(train_path,test_path)
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(X_train,X_test,y_train,y_test,preprocessor))
