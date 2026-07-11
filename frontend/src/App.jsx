@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL
+
 function App() {
   // Form states
   const [gender, setGender] = useState('female')
@@ -43,7 +45,7 @@ function App() {
     }
 
     try {
-      const response = await fetch('/predict', {
+      const response = await fetch(`${API_URL}/predict`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

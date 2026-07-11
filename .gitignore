@@ -44,3 +44,6 @@ catboost_info/
 
 artifacts/*
 !artifacts/model.pkl
+
+.env
+.env.*
