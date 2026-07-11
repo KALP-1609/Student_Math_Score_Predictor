@@ -6,4 +6,7 @@ scikit-learn
 optuna
 xgboost
 catboost
+flask
+dill
+
 -e .
