@@ -42,4 +42,5 @@ htmlcov/
 
 catboost_info/
 
-artifacts/
+artifacts/*
+!artifacts/model.pkl
